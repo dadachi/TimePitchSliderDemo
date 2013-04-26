@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "DCFileProducer.h"
+#import "DCMediaPlayer.h"
 
 @interface SNFViewController ()
 -(NSError*) setUpAudioSession;
@@ -28,6 +29,7 @@
 
 @property(nonatomic, retain)DCMediaExporter *mediaExporter;
 @property(nonatomic, retain)DCAudioProducer *audioProducer;
+@property(nonatomic, retain)DCMediaPlayer *mediaPlayer;
 @property(nonatomic, retain)UIAlertView *alertView;
 - (NSURL *)_exportURLForMediaItem:(MPMediaItem *)mediaItem;
 
@@ -70,6 +72,7 @@ static void CheckError(OSStatus error, const char *operation)
 	// Do any additional setup after loading the view, typically from a nib.
 	
 	[self setUpAudioSession];
+	self.mediaPlayer = [[DCMediaPlayer alloc] init];
 //	[self setUpAUGraph];
 //	[self resetRate];
 }
@@ -719,17 +722,17 @@ static void CheckError(OSStatus error, const char *operation)
 - (void)exporterCompleted:(DCMediaExporter *)exporter {
     NSLog (@"exporterCompleted");
 	// Create a file producer for the file.
-//	self.audioProducer = [[DCFileProducer alloc] initWithMediaURL:exporter.exportURL];
+	self.audioProducer = [[DCFileProducer alloc] initWithMediaURL:exporter.exportURL];
 	
 	// Pass the file producer to our media player.
-//	self.mediaPlayer.audioProducer = self.audioProducer;
+	self.mediaPlayer.audioProducer = self.audioProducer;
 	
 	[[UIApplication sharedApplication] endIgnoringInteractionEvents];
 //	[self.spinner stopAnimating];
-//	[self.mediaPlayer play];
+	[self.mediaPlayer play];
     
     
-    [self playSongWithAssetURL:exporter.exportURL];
+//    [self playSongWithAssetURL:exporter.exportURL];
 }
 
 

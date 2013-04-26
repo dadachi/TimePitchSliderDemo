@@ -29,6 +29,10 @@
 		0172A7DA162B221300C69953 /* Bossa Lounger Long.caf in Resources */ = {isa = PBXBuildFile; fileRef = 0172A7D9162B221300C69953 /* Bossa Lounger Long.caf */; };
 		0172A7E0162B506000C69953 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0172A7DF162B506000C69953 /* Icon@2x.png */; };
 		0172A7E2162B506300C69953 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0172A7E1162B506300C69953 /* Icon.png */; };
+		01881E4A172B12C6004B9BCA /* DCMediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01881E49172B12C6004B9BCA /* DCMediaPlayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		01881E52172B136F004B9BCA /* DCAudioEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 01881E4D172B136F004B9BCA /* DCAudioEffect.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		01881E53172B136F004B9BCA /* DCAudioEffectLowPassFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01881E4F172B136F004B9BCA /* DCAudioEffectLowPassFilter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		01881E54172B136F004B9BCA /* DCAudioEffectMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01881E51172B136F004B9BCA /* DCAudioEffectMeter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +67,14 @@
 		0172A7D9162B221300C69953 /* Bossa Lounger Long.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Bossa Lounger Long.caf"; path = "/Library/Audio/Apple Loops/Apple/iLife Sound Effects/Jingles/Bossa Lounger Long.caf"; sourceTree = "<absolute>"; };
 		0172A7DF162B506000C69953 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		0172A7E1162B506300C69953 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		01881E48172B12C6004B9BCA /* DCMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCMediaPlayer.h; sourceTree = "<group>"; };
+		01881E49172B12C6004B9BCA /* DCMediaPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCMediaPlayer.m; sourceTree = "<group>"; };
+		01881E4C172B136F004B9BCA /* DCAudioEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAudioEffect.h; sourceTree = "<group>"; };
+		01881E4D172B136F004B9BCA /* DCAudioEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAudioEffect.m; sourceTree = "<group>"; };
+		01881E4E172B136F004B9BCA /* DCAudioEffectLowPassFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAudioEffectLowPassFilter.h; sourceTree = "<group>"; };
+		01881E4F172B136F004B9BCA /* DCAudioEffectLowPassFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAudioEffectLowPassFilter.m; sourceTree = "<group>"; };
+		01881E50172B136F004B9BCA /* DCAudioEffectMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAudioEffectMeter.h; sourceTree = "<group>"; };
+		01881E51172B136F004B9BCA /* DCAudioEffectMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAudioEffectMeter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +137,8 @@
 				0172A7C9162B1DF000C69953 /* SNFViewController.h */,
 				0172A7CA162B1DF000C69953 /* SNFViewController.m */,
 				0172A7CC162B1DF000C69953 /* SNFViewController.xib */,
+				01881E48172B12C6004B9BCA /* DCMediaPlayer.h */,
+				01881E49172B12C6004B9BCA /* DCMediaPlayer.m */,
 				0146937E172A8D050055AE22 /* DCAudioProducer.h */,
 				0146937F172A8D050055AE22 /* DCAudioProducer.m */,
 				0146937A172A8C570055AE22 /* DCFileProducer.h */,
@@ -133,6 +147,7 @@
 				0146937D172A8C570055AE22 /* DCMediaExporter.m */,
 				01469383172A8EA40055AE22 /* DCRingBufferRecord.h */,
 				01469384172A8EA40055AE22 /* DCRingBufferRecord.m */,
+				01881E4B172B1357004B9BCA /* Effects */,
 				0172A7B8162B1DF000C69953 /* Supporting Files */,
 			);
 			path = TimeSliderDemo;
@@ -158,6 +173,19 @@
 				0172A7D9162B221300C69953 /* Bossa Lounger Long.caf */,
 			);
 			name = Audio;
+			sourceTree = "<group>";
+		};
+		01881E4B172B1357004B9BCA /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				01881E4C172B136F004B9BCA /* DCAudioEffect.h */,
+				01881E4D172B136F004B9BCA /* DCAudioEffect.m */,
+				01881E4E172B136F004B9BCA /* DCAudioEffectLowPassFilter.h */,
+				01881E4F172B136F004B9BCA /* DCAudioEffectLowPassFilter.m */,
+				01881E50172B136F004B9BCA /* DCAudioEffectMeter.h */,
+				01881E51172B136F004B9BCA /* DCAudioEffectMeter.m */,
+			);
+			name = Effects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +265,10 @@
 				01469381172A8E610055AE22 /* DCFileProducer.m in Sources */,
 				01469382172A8E640055AE22 /* DCMediaExporter.m in Sources */,
 				01469385172A8EA50055AE22 /* DCRingBufferRecord.m in Sources */,
+				01881E4A172B12C6004B9BCA /* DCMediaPlayer.m in Sources */,
+				01881E52172B136F004B9BCA /* DCAudioEffect.m in Sources */,
+				01881E53172B136F004B9BCA /* DCAudioEffectLowPassFilter.m in Sources */,
+				01881E54172B136F004B9BCA /* DCAudioEffectMeter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
