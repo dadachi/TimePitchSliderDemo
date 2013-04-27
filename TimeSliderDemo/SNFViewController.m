@@ -721,18 +721,20 @@ static void CheckError(OSStatus error, const char *operation)
 #pragma DCMediaExporterDelegate
 - (void)exporterCompleted:(DCMediaExporter *)exporter {
     NSLog (@"exporterCompleted");
+	[[UIApplication sharedApplication] endIgnoringInteractionEvents];
+#if 0
 	// Create a file producer for the file.
 	self.audioProducer = [[DCFileProducer alloc] initWithMediaURL:exporter.exportURL];
 	
 	// Pass the file producer to our media player.
 	self.mediaPlayer.audioProducer = self.audioProducer;
 	
-	[[UIApplication sharedApplication] endIgnoringInteractionEvents];
-//	[self.spinner stopAnimating];
+    //	[self.spinner stopAnimating];
 	[self.mediaPlayer play];
+#else
+    [self playSongWithAssetURL:exporter.exportURL];
+#endif
     
-    
-//    [self playSongWithAssetURL:exporter.exportURL];
 }
 
 
