@@ -94,7 +94,7 @@ static void CheckError(OSStatus error, const char *operation)
 	pickerController.prompt = @"Choose song";
 	pickerController.allowsPickingMultipleItems = NO;
 	pickerController.delegate = self;
-	[self presentModalViewController:pickerController animated:YES];
+	[self presentViewController:pickerController animated:YES completion:nil];
 }
 
 #pragma mark slider stuff
