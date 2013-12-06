@@ -6,4 +6,5 @@ This is based on the following:
 
 Bug:  
 - Audio is distorted.  
+- You can not change pitch and time of the song which you bought on iTunes.  
 
